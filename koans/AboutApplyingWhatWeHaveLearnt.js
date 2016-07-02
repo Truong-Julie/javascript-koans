@@ -30,15 +30,19 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
       var productsICanEat = [];
 
-      /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      // /* solve using filter() & all() / any() */
+
+      var productsICanEat = _(products).filter(function(item) { return !item.containsNuts && _(item.ingredients).all(function(ingredient) {return ingredient !== "mushrooms";})
+      });
+
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -52,11 +56,20 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
     
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    // var sum = _.chain();  
+    //     _.range(1,1000)
+    //     _.reduce(function(memo, x) {
+    //       if (memo % 3 === 0 && memo % 5 === 0) {
+    //         return memo + x;
+    //       };
+    //     }, 0)
+    //     .value();
+
+    //   /* try chaining range() and reduce() */
 
     expect(233168).toBe(FILL_ME_IN);
   });
