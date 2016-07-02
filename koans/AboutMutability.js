@@ -55,8 +55,8 @@ describe("About Mutability", function() {
     aPerson.fullName  = "Penny Andrews";
     
     expect(aPerson.getFirstName()).toBe("John");
-    expect(aPerson.getLastName()).toBe("Andrews");
-    expect(aPerson.getFullName()).toBe("Penny Andrews");
+    expect(aPerson.getLastName()).toBe("Smith");
+    expect(aPerson.getFullName()).toBe("John Smith");
 
     aPerson.getFullName = function() {
       return aPerson.lastname + ", " + aPerson.firstname;
